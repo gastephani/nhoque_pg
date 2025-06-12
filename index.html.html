@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área Secreta</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1598920710727-e6c74781538c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhbm8lMjBkZSUyMGZ1bmRvJTIwZ2lyYXNzb2x8ZW58MHx8MHx8fDA%3D') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 8vw;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+      width: 90vw;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #333;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff8fa3;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff6e8b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Qual seu restaurante italiano favorito em Ubatuba?</h1>
+    <input type="text" id="senha" placeholder="Digite aqui..." />
+    <button onclick="verificarSenha()">Entrar</button>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById("senha").value.trim().toLowerCase();
+      const validas = ['spaghetto', 'spagheto', 'spagueto'];
+      if (validas.includes(senha)) {
+        window.location.href = "pagina-secreta.html";
+      } else {
+        alert("Senha incorreta. Tente novamente!");
+      }
+    }
+  </script>
+</body>
+</html>
